@@ -2,7 +2,7 @@ import React from "react";
 
 class CartItem extends React.Component {
   render() {
-    return (
+    return <>
       <div className="cart__item">
         <button
           className="remove-btn"
@@ -13,9 +13,9 @@ class CartItem extends React.Component {
           remove
         </button>
         <div className="cart__item-desc">
-          <p className="item__title">{this.props.item.items[0].itemBrand}</p>
-          <p className="item__name">{this.props.item.items[0].itemName}</p>
-          <h3 className="item__price">
+          <p style={{ fontSize: "20px", fontWeight: "600" }} className="item__title">{this.props.item.items[0].itemBrand}</p>
+          <p style={{ fontSize: "20px", fontWeight: "300" }} className="item__name">{this.props.item.items[0].itemName}</p>
+          <h3  style={{ fontSize: "16px", fontWeight: "700" }} className="item__price">
             {this.props.currency}
             {
               this.props.item.items[0].itemPrice.find(
@@ -24,18 +24,18 @@ class CartItem extends React.Component {
             }
           </h3>
 
-          <ul className="item__params">
+          <ul  className="item__params">
             {this.props.item.items[0].params.map((param, idx) => {
               return (
-                <li key={idx}>
+                <li style={{fontSize: "16px"}} key={idx}>
                   {param.paramName}:
                   {param.paramName !== "Color" ? (
-                    <span>{param.paramValue}</span>
+                    <span style={{ fontSize: "14px", fontWeight: "400", padding: "8px 14px" }}>{param.paramValue}</span>
                   ) : (
-                    <span
+                    <p
                       className="color"
                       style={{ backgroundColor: param.paramValue }}
-                    ></span>
+                    ></p>
                   )}
                 </li>
               );
@@ -64,12 +64,13 @@ class CartItem extends React.Component {
               -
             </button>
           </div>
-          <div className="item__img">
-            <img src={this.props.item.items[0].itemGallery[0]} alt="" />
+          <div  className="item__img">
+            <img  src={this.props.item.items[0].itemGallery[0]} alt="" />
           </div>
         </div>
       </div>
-    );
+
+      </>
   }
 }
 

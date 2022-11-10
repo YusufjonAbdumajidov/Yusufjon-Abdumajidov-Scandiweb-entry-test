@@ -23,7 +23,7 @@ class productBlock extends React.Component {
     };
 
     return (
-      <div style={{boxShadow: "0 4px 10px rgba(179, 179, 179, .7)"}}
+      <div 
         className={`productBlock ${
           this.props.outOfStock ? "out-of-stock" : ""
         }`} 
@@ -39,8 +39,10 @@ class productBlock extends React.Component {
         <button className="productBlock__btn" onClick={onAddToCart}>
           <CartIco />
         </button>
-        <h3 className="productBlock__brand">{this.props.product.brand}</h3>
-        <h4 className="productBlock__title">{this.props.product.name}</h4>
+        <div style={{ display: "flex" }}>
+        <h4 className="productBlock__title">{this.props.product.brand} {this.props.product.name}</h4>
+        </div>
+        
         <p className="productBlock__price">
           {this.props.currency + " "}
           {

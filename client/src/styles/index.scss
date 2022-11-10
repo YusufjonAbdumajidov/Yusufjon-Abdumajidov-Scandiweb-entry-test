@@ -147,15 +147,15 @@ code {
 
     .item__title {
       max-width: 136px;
-      font-weight: 700;
-      font-size: 13px;
+      font-weight: 600;
+      font-size: 16px;
       margin-bottom: 5px;
 
     }
 
     .item__name {
       max-width: 136px;
-      font-weight: 300;
+      font-weight: 400;
       font-size: 16px;
       line-height: 25.6px;
       margin-bottom: 5px;
@@ -169,7 +169,7 @@ code {
     }
 
     .item__params {
-      font-size: 13px;
+      font-size: 18px;
 
       li {
 
@@ -739,7 +739,7 @@ code {
 .productBlock {
 
   background-color: #fff;
-  padding: 15px;
+  padding: 16px;
   width: 386px;
   height: 444px;
   transition: .3s;
@@ -827,6 +827,10 @@ code {
       font-size: 18px;
       font-weight: 500;
       color: $text-color;
+      line-height: 160%;
+      color: #1D1F22;
+      margin-top: 3px;
+
   }
 
 

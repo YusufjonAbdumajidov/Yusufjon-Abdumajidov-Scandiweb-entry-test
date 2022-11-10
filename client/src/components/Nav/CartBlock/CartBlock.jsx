@@ -78,7 +78,7 @@ class CartBlock extends React.Component {
           }`}
         >
           <h5>
-            My Bag, <span>{this.props.cart.totalCount} items</span>
+            My Bag, <span>{this.props.cart.totalCount} {this.props.cart.totalCount > 1 ? "items" : "item"} </span>
           </h5>
           <div className="cart__items">
             {this.props.cart.totalCount > 0 ? (
@@ -104,7 +104,7 @@ class CartBlock extends React.Component {
             )}
           </div>
           <div className="cart__total">
-            <h3>
+            <h3 style={{ margin: "8px 0" }}>
               Total
               <span>
                 {this.props.currency}

@@ -25,7 +25,7 @@ class CartPage extends React.Component {
     return (
       <>
         <div className="container cart">
-          <h1>My Cart</h1>
+          <h1 style={{ fontSize: "32px", fontWeight: "700" }}>Cart</h1>
           {this.props.cart.totalCount > 0 ? (
             Object.values(this.props.cart.items).map((item, idx) => {
               return (
@@ -37,8 +37,10 @@ class CartPage extends React.Component {
                   onMinusItem={onMinusCart}
                   onRemoveProduct={onRemoveItem}
                 />
+
               );
             })
+           
           ) : (
             <div className="cart__empty">
               <div className="cart__empty-img">
@@ -55,7 +57,21 @@ class CartPage extends React.Component {
               </Link>
             </div>
           )}
+          <div style={{ marginTop: "30px", fontSize: "24px", fontHeight: "28px", fontWeight: "400", color: "#1D1F22", lineHeight: "28px"}} className="cart_total_price">
+            <p >Tax 21%: <span style={{fontWeight: "700", marginLeft: "6px"}}>${ parseFloat((21 / 100) *  (this.props.cart.totalPrice[this.props.currency] &&
+                  this.props.cart.totalPrice[this.props.currency]) ??
+                  0).toFixed(2)}</span></p>
+            <p>Quantity: <span style={{fontWeight: "700", marginLeft: "6px"}}>{this.props.cart.totalCount}</span></p>
+            <p>Total: <span style={{fontWeight: "700", marginLeft: "6px"}}> {this.props.currency}
+                {parseFloat((this.props.cart.totalPrice[this.props.currency]  &&
+                  this.props.cart.totalPrice[this.props.currency] + 
+                  (21 / 100) *  (this.props.cart.totalPrice[this.props.currency] &&
+                    this.props.cart.totalPrice[this.props.currency])) ??
+                  0  ).toFixed(2)}</span></p>
+                <button style={{marginTop: "20px", backgroundColor: "#5ECE7B", fontSize: "16px", color: "#fff", padding: "14px 120px", cursor: "pointer"}}>Order</button>
+          </div>
         </div>
+        
       </>
     );
   }
@@ -86,3 +102,8 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
+
+
+
+
+

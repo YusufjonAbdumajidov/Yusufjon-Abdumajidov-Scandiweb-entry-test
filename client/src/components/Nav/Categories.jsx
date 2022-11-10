@@ -30,7 +30,8 @@ class Categories extends React.Component {
                 key={category.name}
               >
                 <Link
-                  to="/"
+                id={category.name}
+                  to={`/`}
                   onClick={() => {
                     handleClick(category.name);
                   }}
